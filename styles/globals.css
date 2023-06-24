@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .hoverAnimation {
+    @apply hover:bg-white hover:bg-opacity-10 rounded-full cursor-pointer w-[52px] h-[52px] xl:w-auto xl:h-auto xl:py-3 xl:px-4 transition duration-200 ease-out ;
+  }
+}
+.icon {
+  @apply w-9 h-9 flex items-center justify-center hover:bg-[#1d9bf0] hover:opacity-5 cursor-pointer rounded-full transition ease-in-out
+}
+.hoverEffect {
+  @apply hover:bg-[#181818] rounded-full cursor-pointer transition duration-300
+}
